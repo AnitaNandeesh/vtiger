@@ -7,6 +7,8 @@ data = read_data("smoke","test_login")
 _headers = read_headers("smoke","test_createcampaign")
 _data = read_data("smoke","test_createcampaign")
 
+
+# @mark.dependency(depends="login")
 @mark.parametrize(headers,data)
 @mark.parametrize(_headers,_data)
 def test_create_campaign(driver,pages,campaignname,assignedto,expclosedate,username, password):

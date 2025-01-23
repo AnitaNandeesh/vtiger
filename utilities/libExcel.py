@@ -28,11 +28,12 @@ def read_headers(sheetname,test_case_name):
     used_rows = sheet.nrows
     for i in range(0,used_rows):
         row = sheet.row_values(i)
+        # print(row)
         if row[0] == test_case_name:
             headers = sheet.row_values(i-1)
             valid_headers = [header.strip() for header in headers if header.strip()]
             return ','.join(valid_headers[2:])
-
+# read_headers('smoke','test_createcampaign')
 def read_data(sheetname,test_case_name):
     book = open_workbook(r"C:\Users\Anita\PycharmProjects\vtigerFramework\vtiger_testdata.xls")
     sheet = book.sheet_by_name(sheetname)
@@ -45,3 +46,4 @@ def read_data(sheetname,test_case_name):
             if temp_record[1].upper() == 'YES':
                 final_data.append(tuple(temp_record[2:]))
     return final_data
+# print(read_data('smoke','test_login'))

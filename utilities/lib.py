@@ -1,7 +1,7 @@
 from selenium.webdriver.firefox.webdriver import WebDriver
 from xlrd import open_workbook
 from selenium.webdriver.support.wait import WebDriverWait
-from  selenium.webdriver.support.expected_conditions import visibility_of_element_located
+from selenium.webdriver.support.expected_conditions import visibility_of_element_located
 def _wait(func):
     def wrapper(instance,locator,**kwargs):
         wait = WebDriverWait(instance.driver,10)
